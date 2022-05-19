@@ -1,8 +1,6 @@
-import * as React from 'react';
-import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
-
+import Search from './searchbar'
 
 const list = [
     {
@@ -26,7 +24,7 @@ const list = [
 ]
 /* const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
  */
-/* const filteredActivity = (word)=>{
+ const filteredActivity = (word)=>{
     if(!word){
         return list
     }
@@ -35,7 +33,9 @@ const list = [
     })
 }
 
-console.log(filteredActivity('6')); */
+console.log(filteredActivity('Marche à pied'));
+console.log("list",list);
+console.log()
 const ListActivities = () => {
     return (
         <View>
