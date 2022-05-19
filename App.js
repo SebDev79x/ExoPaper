@@ -1,12 +1,53 @@
-import { StatusBar } from 'expo-status-bar';
+import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import { Appbar } from 'react-native-paper';
+import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+import ListActivities from './list'
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'tomato',
+    accent: 'yellow',
+  },
+}
 
-export default function App() {
+/* const RightContent = props => <Avatar.Icon {...props} icon="folder" />
+ */export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <PaperProvider theme={theme}>
+      <Appbar >
+      <Appbar.Content title="Activity Tracker" subtitle="I'm watching you !" />
+        {/* <Appbar.Action
+          icon="archive"
+          onPress={() => console.log('Pressed archive')}
+        />
+        <Appbar.Action icon="mail" onPress={() => console.log('Pressed mail')} />
+        <Appbar.Action icon="label" onPress={() => console.log('Pressed label')} />
+        <Appbar.Action
+          icon="delete"
+          onPress={() => console.log('Pressed delete')}
+        /> */}
+        <Avatar.Image style={styles.avatar} size={36} source={require('./assets/vador.png')} />
+      </Appbar>
+      <View>
+        <Text style={styles.home}>Home</Text>
+
+      </View>
+      <ListActivities/>
+        {/* <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
+        <Card.Content>
+          <Title>Card title</Title>
+          <Paragraph>Card content</Paragraph>
+        </Card.Content>
+        <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+        <Card.Actions>
+          <Button>Cancel</Button>
+          <Button>Ok</Button>
+        </Card.Actions> */}
+    </PaperProvider>
+
   );
 }
 
@@ -17,4 +58,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  bottom: {
+    right: 0,
+    left:0,
+    bottom: 0,
+  },
+  home :{
+    fontSize:35
+  }
+  
 });
