@@ -1,25 +1,30 @@
- 
-   [
-    {
-        "id":1,
-        "activity": "Marche à pied",
-        "date": "26/05/2022",
-        "distance": "6",
-        "time": "0h50"
-    },
-    {
-        "id":2,
-        "activity": "Marche sur les mains",
-        "date": "25/05/2022",
-        "distance": "",
-        "time": "0h50"
-    },
-    {
-        "id":3,
-        "activity": "Marche sans pieds",
-        "date": "22/05/2022",
-        "distance": "",
-        "time": "0h50"
-    }
-
-    ]
+[
+  {
+    "id": 1,
+    "activity": "Marche",
+    "date": "26/05/2022",
+    "distance": "6",
+    "time": "0h50"
+  },
+  {
+    "id": 2,
+    "activity": "Footing",
+    "date": "25/05/2022",
+    "distance": "15",
+    "time": "0h50"
+  },
+  {
+    "id": 3,
+    "activity": "Rando",
+    "date": "22/05/2022",
+    "distance": "",
+    "time": "0h50"
+  },
+  {
+    "id": 4,
+    "activity": "Canapé",
+    "date": "26/05/2022",
+    "distance": "Aucune",
+    "time": "0h50"
+  }
+]

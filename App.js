@@ -7,8 +7,8 @@ import { Avatar, Button, Card, Title, Paragraph, Appbar, DefaultTheme, Provider 
 /* import ListActivities from './list'
  *//* import Search from './searchbar'
  */import { SafeAreaProvider } from 'react-native-safe-area-context';
-/* import List from './activities'
- */const theme = {
+import List from './activities.json'
+const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
@@ -16,43 +16,51 @@ import { Avatar, Button, Card, Title, Paragraph, Appbar, DefaultTheme, Provider 
     accent: 'yellow',
   },
 }
-const list = [
+const list = require('./activities.json');
+console.log("list",list)
+/* const list = [
   {
+    id:1,
     activity: 'Marche à pied',
     date: '26/05/2022',
     distance: '6',
     time: '0h50'
   },
   {
+    id:2,
     activity: 'Marche sans les pieds',
     date: '26/05/2022',
     distance: '6',
     time: '0h50'
   },
   {
+    id:3,
     activity: 'Canapé',
     date: '21/05/2022',
     distance: '',
     time: '48h00'
   },
   {
+    id:4,
     activity: 'Gaming',
     date: '20/01/2023',
-    distance: '',
+    distance: '3',
     time: '48h00'
   },
   {
+    id:5,
     activity: 'Glandage',
     date: '20/01/2023',
-    distance: '',
+    distance: '3',
     time: '21h00'
   }, {
+    id:6,
     activity: 'Couture',
     date: '20/01/2023',
-    distance: '',
+    distance: '5',
     time: '08h00'
   }
-]
+] */
 export default function App() {
   // Activities list in const
   // the value of the search field 
@@ -64,7 +72,8 @@ export default function App() {
     const keyword = e.target.value;
     if (keyword !== '') {
       const results = list.filter((e) => {
-        return e.activity.toLowerCase().startsWith(keyword.toLowerCase());
+        return e.activity.toLowerCase().startsWith(keyword.toLowerCase()) || 
+        e.distance.toLowerCase().startsWith(keyword.toLowerCase())
         // Use the toLowerCase() method to make it case-insensitive
       });
       setfoundActivity(results);
@@ -79,24 +88,12 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <PaperProvider theme={theme}>
-
         <Appbar >
           <Appbar.Content title="Activity Tracker" subtitle="I'm watching you !" />
-          {/* <Appbar.Action
-          icon="archive"
-          onPress={() => console.log('Pressed archive')}
-        />
-        <Appbar.Action icon="mail" onPress={() => console.log('Pressed mail')} />
-        <Appbar.Action icon="label" onPress={() => console.log('Pressed label')} />
-        <Appbar.Action
-          icon="delete"
-          onPress={() => console.log('Pressed delete')}
-        /> */}
           <Avatar.Image style={styles.avatar} size={36} source={require('./assets/vador.png')} />
         </Appbar>
         <View>
           <Text style={styles.home}>Home</Text>
-
         </View>
         <SearchBar
           platform="default"
@@ -108,26 +105,14 @@ export default function App() {
           loadingProps={{}}
           onChange={filter}
           onClearText={() => console.log(onClearText())}
-          placeholder="Tu cherches un truc ?"
+          placeholder="Rech. par activité ou distance"
           placeholderTextColor="blanchedalmond"
           cancelButtonProps={{}}
           onCancel={() => console.log(onCancel())}
           value={activity}
         />
-        {/* <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
-        <Card.Content>
-          <Title>Card title</Title>
-          <Paragraph>Card content</Paragraph>
-        </Card.Content>
-        <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-        <Card.Actions>
-          <Button>Cancel</Button>
-          <Button>Ok</Button>
-        </Card.Actions> */}
         <View>
-
           <FlatList
-
             data={foundActivity}
             keyExtractor={item => item.id}
             renderItem={({ item }) =>
@@ -157,7 +142,7 @@ export default function App() {
                   </Card.Content>
                   <Card.Content style={styles.content}>
                     <View>{
-                      item.distance == '' ? <Paragraph>Aucune</Paragraph> : <Paragraph>{item.distance} mn</Paragraph>
+                      item.distance == '' ? <Paragraph>Aucune</Paragraph> : <Paragraph>{item.distance} Km</Paragraph>
                     }</View>
                     <Paragraph>{item.time} mn</Paragraph>
                   </Card.Content>
