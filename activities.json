@@ -1,0 +1,25 @@
+ 
+   [
+    {
+        "id":1,
+        "activity": "Marche à pied",
+        "date": "26/05/2022",
+        "distance": "6",
+        "time": "0h50"
+    },
+    {
+        "id":2,
+        "activity": "Marche sur les mains",
+        "date": "25/05/2022",
+        "distance": "",
+        "time": "0h50"
+    },
+    {
+        "id":3,
+        "activity": "Marche sans pieds",
+        "date": "22/05/2022",
+        "distance": "",
+        "time": "0h50"
+    }
+
+    ]

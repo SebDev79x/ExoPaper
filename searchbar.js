@@ -1,17 +1,8 @@
-import { SearchBar } from 'react-native-elements';
-import React, { useState } from "react";
+/* import React, { useState } from "react";
 
 
 const Search = () =>{
-    const state = {
-        search: '',
-      };
-     const updateSearch = (search) => {
-        this.setState({ search });
-      };
-        const { search } = state;
-        const [value, setValue] = React.useState("");
-        console.log("value",value)
+
 return (
     <SearchBar
     platform="default"
@@ -31,4 +22,4 @@ return (
   />)
 }
 
-export default Search;
+export default Search; */

@@ -1,46 +1,41 @@
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+/* import { StyleSheet, Text, View, FlatList } from 'react-native';
 import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 import Search from './searchbar'
+import React, { useState, useEffect } from 'react'; */
 
-const list = [
-    {
-        activity: 'Marche à pied',
-        date: '26/05/2022',
-        distance: '6',
-        time: '0h50'
-    },
-    {
-        activity: 'Canapé',
-        date: '21/05/2022',
-        distance: '',
-        time: '48h00'
-    },
-    {
-        activity: 'Gaming',
-        date: '20/01/2023',
-        distance: '',
-        time: '48h00'
-    }
-]
 /* const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
  */
- const filteredActivity = (word)=>{
+/*  const filteredActivity = (word)=>{
     if(!word){
         return list
     }
     return list.filter((e)=>{
         return e.activity == word
     })
-}
+} */
 
-console.log(filteredActivity('Marche à pied'));
+
+/* console.log(filteredActivity('Marche à pied'));
 console.log("list",list);
-console.log()
-const ListActivities = () => {
+ */
+
+
+/* const ListActivities = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+
+        fetch(list)
+          .then(results => {
+            setData(results);
+          })
+          
+      }, []);
     return (
         <View>
             <FlatList
                 data={list}
+                keyExtractor={item => item.id}
                 renderItem={({ item }) =>
                     <View style={{
                         alignItems: 'center'
@@ -88,4 +83,4 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     }
 });
-export default ListActivities;
+export default ListActivities; */
